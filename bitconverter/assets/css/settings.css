@@ -1,0 +1,185 @@
+body main .container .content .settings {
+  position: absolute;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  height: 100%;
+  width: 100%;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+body main .container .content .settings.opened {
+  z-index: 13;
+  opacity: 1;
+  transform: scale(1);
+  top: 0;
+  right: 0;
+}
+body main .container .content .settings.closed {
+  z-index: -1;
+  opacity: 0;
+  transform: scale(.1);
+  top: 0;
+  right: 0;
+}
+body main .container .content .settings::-webkit-scrollbar {
+  width: 0;
+}
+body main .container .content .settings h1 {
+  margin: 1em 0;
+}
+body main .container .content .settings fieldset {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+body main .container .content .settings fieldset legend {
+  padding: 0 1em;
+  margin-left: 1em;
+  font-weight: 600;
+}
+body main .container .content .settings fieldset > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1em 2em;
+}
+body main .container .content .settings fieldset .theme_setting .themes {
+  height: 3.05em;
+  width: 12em;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  border: 1px solid var(--border-color);
+  border-radius: 1em;
+  overflow: hidden;
+}
+body main .container .content .settings fieldset .theme_setting .themes button {
+  border-radius: 0;
+  border: none;
+  background: transparent;
+}
+body main .container .content .settings fieldset .theme_setting .themes button:first-child {
+  border-right: 1px solid var(--border-color);
+}
+body main .container .content .settings fieldset .theme_setting .themes button:hover {
+  background: var(--primary-alt-color);
+}
+body main .container .content .settings fieldset .theme_setting .themes button.active {
+  background: var(--primary-color);
+}
+body main .container .content .settings fieldset .color_scheme .color_options {
+  height: 5em;
+  display: grid;
+  min-width: 24em;
+  grid-template-columns: repeat(3, 30%);
+  justify-items: center !important;
+  gap: 5%;
+}
+body main .container .content .settings fieldset .color_scheme .color_options button {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--elegant-theme);
+  justify-content: center;
+  gap: 1em;
+  width: 5em;
+}
+body main .container .content .settings fieldset .color_scheme .color_options button .scheme_indic {
+  height: 1.5em;
+  width: 1.5em;
+  background: var(--elegant-theme);
+  border-radius: 1em;
+}
+body main .container .content .settings fieldset .color_scheme .color_options button:nth-child(2) .scheme_indic {
+  background: var(--savage-theme);
+}
+body main .container .content .settings fieldset .color_scheme .color_options button:nth-child(2) {
+  color: var(--savage-theme);
+}
+body main .container .content .settings fieldset .color_scheme .color_options button:last-child .scheme_indic {
+  background: var(--faune-theme);
+}
+body main .container .content .settings fieldset .color_scheme .color_options button:last-child {
+  color: var(--faune-theme);
+}
+.set_history_state, .switcher_display_state {
+  border: none;
+  background: transparent;
+  color: var(--primary-color);
+}
+.set_history_state:hover, .switcher_display_state:hover {
+  opacity: .7;
+}
+.user_box {
+  height: auto;
+  width: 100%;
+  position: relative;
+  padding: 1em 2em;
+}
+.user_box input {
+  height: 4em;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 1em;
+  text-indent: 1em;
+}
+.user_box input:focus ~ label,
+.user_box input:valid ~ label {
+  top: 1em;
+  left: 4em;
+  font-size: .9em;
+  padding: .5em;
+  background: var(--background-color);
+}
+.user_box label {
+  position: absolute;
+  top: 50%;
+  left: 3em;
+  transform: translateY(-50%);
+}
+.color_options button.active {
+  background: var(--primary-alt-color) !important;
+}
+.lang_btn {
+  padding: 1em;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.lang_btn:hover {
+  background: var(--primary-alt-color);
+}
+body main .container .content .settings fieldset > div .history_toggler,
+body main .container .content .settings fieldset > div .switcher_display_b {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  height: 3em;
+  width: 6em;
+  border-radius: 3em;
+  position: relative;
+}
+body main .container .content .settings fieldset > div .history_toggler .history_indic,
+body main .container .content .settings fieldset > div .switcher_display_b .switcher_display_indic {
+  height: 100%;
+  width: 3em;
+  display: inline-block;
+  border-radius: 3em;
+  position: absolute;
+  top: 0;
+}
+body main .container .content .settings fieldset > div .history_toggler.unactive .history_indic,
+body main .container .content .settings fieldset > div .switcher_display_b.unactive .switcher_display_indic {
+  background: var(--border-color);
+  left: 0;
+  right: auto;
+}
+body main .container .content .settings fieldset > div .history_toggler.active .history_indic,
+body main .container .content .settings fieldset > div .switcher_display_b.active .switcher_display_indic {
+  background: var(--primary-color);
+  right: 0;
+}

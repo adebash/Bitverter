@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'Lexend';
+  src: url('/core/shared/fonts/LexendDeca-VariableFont_wght.ttf');
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-family: 'Lexend', sans-serif;
+  text-decoration: none;
+  text-transform: none;
+  color: currentColor;
+  outline: none;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  scroll-behavior: smooth;
+}
+
+/* constants variables */
+
+
+
+:root {
+  --elegant-theme: #3333ff;
+  --savage-theme: #ff3333;
+  --faune-theme: #007700;
+
+  --elegant-theme-alt: #3333ff3d;
+  --savage-theme-alt: #ff33333d;
+  --faune-theme-alt: #3f33;
+
+  --success-color: #007700;
+  --warning-color: #c8c803;
+
+  --success-color-alt: #33ff333d;
+  --warning-color-alt: #c8c8033d;
+
+  --primary-color: var(--elegant-theme);
+  --primary-alt-color: var(--elegant-theme-alt);
+
+  --error: #ff3333;
+  --border-color: #ccc7;
+}
+
+.light {  
+  --text-color: #111217 ;
+  --background-color: #F7F8FA ;
+  --text-alt: #11121715;
+}
+
+.dark {
+  --text-color: #F7F8FA ;
+  --background-color: #111217 ;
+  --text-alt: #f7f8fa37;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.padding-ish {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+button {
+  border-radius: 1em;
+  cursor: pointer;
+  font-weight: 600;
+}
+svg {
+  width: 2em;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: 13px;
+}
+body header {
+  height: 6em;
+  background: transparent;
+  backdrop-filter: blur(1em);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+body header .logo {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  font-weight: bold;
+}
+body header .logo img {
+  width: 3em;
+}

@@ -1,0 +1,258 @@
+body main {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+body main .hero {
+  text-align: center;
+}
+body main .container {
+  min-height: 60vh;
+  width: 978px;
+  background: var(--background-color);
+  backdrop-filter: blur(1em);
+  border-radius: 1em;
+  padding: 1em;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+}
+body main .container .params {
+  height: 4em;
+  width: 100%;
+  background: transparent;
+  backdrop-filter: blur(1em);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+body main .container .params button {
+  height: 3.5em;
+  min-width: 3.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: .5em;
+  padding: 0 1em;
+  border: 1px solid var(--border-color);
+  background: transparent;
+}
+body main .container .params button:hover {
+  border: 1px solid var(--primary-alt-color);
+}
+body main .container .params button.active {
+  background: var(--primary-alt-color)
+}
+body main .container .params button.user_btn,
+body main .container .params button.user_btn:hover {
+  border: 1px solid transparent;
+}
+
+body main .container .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+}
+body main .container .content form {
+  height: 5em;
+  width: 100%;
+  background: transparent;
+  position: relative;
+}
+body main .container .content form .form_from {
+  height: 3.05em;
+  max-width: 12em;
+  padding: 0 1em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1em;
+  opacity: .6;
+}
+body main .container .content form input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 1em;
+  text-align: center;
+}
+body main .container .content form input:focus {
+  border: 1px solid var(--primary-color);
+}
+body main .container .content form input ~ label {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+body main .container .content form input:focus ~ label,
+body main .container .content form input:valid ~ label {
+  top: 1em;
+  font-size: .9em;
+}
+body main .container .content form .copy_form_from {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1em;
+  height: 3.05em;
+  max-width: 10em;
+  padding: 0 .5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-alt-color);
+  border: 1px solid var(--primary-alt-color);
+  gap: .5em;
+}
+body main .container .content form .copy_form_from:hover {
+  background: var(--primary-color);
+}
+
+body main .container .content .conv_box {
+  width: 100%;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 40% 10% 40%;
+  gap: 5%;
+  border-radius: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .container .content .conv_box > div {
+  height: 15em;
+  background: var(--background-color);
+  border-radius: 1em;
+  border: 1px solid var(--border-color);
+}
+body main .container .content .conv_box > div .info {
+  background: transparent;
+  height: 4em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: .5em;
+  border-radius: 1em 1em 0 0;
+  border-bottom: 1px solid var(--border-color);
+}
+body main .container .content .conv_box > div .info .bytes_box {
+  position: relative;
+  width: 80%;
+}
+body main .container .content .conv_box > div .info .bytes_box button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: .5em;
+  height: 3.05em;
+}
+body main .container .content .conv_box > div .info .bytes_box > button {
+  justify-content: space-between;
+  height: calc(4em - 2px);
+  border: 1px solid var(--border-color);
+  border-radius: 1em 1em 0 0;
+  background: var(--primary-alt-color);
+}
+body main .container .content .conv_box > div .info .bytes_box > button:hover {
+  border: 1px solid var(--primary-color);
+}
+body main .container .content .conv_box > div .info .bytes_box .bytes_options {
+  position: absolute;
+  width: 100%;
+  max-height: 14em;
+  overflow-y: scroll;
+  border-radius: 0 0 1em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  background: var(--background-color);
+}
+body main .container .content .conv_box > div .info .bytes_box .bytes_options.bytes_options_closed {
+  transform: scale(.7);
+  top: -200%;
+  z-index: -1;
+  opacity: 0;
+}
+body main .container .content .conv_box > div .info .bytes_box .bytes_options.bytes_options_opened {
+  transform: scale(1);
+  top: 100%;
+  z-index: 13;
+  opacity: 1;
+}
+body main .container .content .conv_box > div .info .bytes_box .bytes_options::-webkit-scrollbar {
+  display: none;
+}
+body main .container .content .conv_box > div .info .bytes_box .bytes_options button {
+  min-height: 3.05em;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding-left: 1em;
+  background: transparent;
+}body main .container .content .conv_box > div .info .bytes_box .bytes_options button:hover {
+  background: var(--primary-alt-color);
+}
+body main .container .content .conv_box > div .info ~ div {
+  height: calc(100% - 4em);
+  position: relative;
+}
+body main .container .content .conv_box > div .info ~ div input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 0 0 1em 1em;
+  background: transparent;
+  text-indent: 1em;
+  font-size: 2em;
+  font-weight: 600;
+}
+body main .container .content .conv_box > div .info ~ div button {
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  height: 3em;
+  width: 3em;
+  border: 1px solid transparent;
+  background: transparent;
+  backdrop-filter: blur(1em);
+}
+body main .container .content .conv_box > div .info ~ div button:hover {
+  color: var(--primary-color);
+}
+body main .container .content .switch {
+  height: 4em;
+  width: 4em;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  background: var(--primary-alt-color);
+}
+body main .container .content .switch:hover {
+  box-shadow: 1em 1em 4em var(--primary-alt-color);
+}
+body main .container .content .main_history {
+  height: 3.5em;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  background: var(--background-color);
+}
+body main .container .content .main_history:hover {
+  color: var(--primary-color);
+  background: var(--primary-alt-color);
+}

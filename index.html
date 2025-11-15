@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitverter | Starting</title>
+  <link rel="stylesheet" href="/core/shared/css/root.css">
+  <link rel="stylesheet" href="/core/shared/css/style.css">
+  <link rel="stylesheet" href="/core/shared/css/media_query.css">
+  <link rel="shortcut icon" href="/core/shared/images/bitconverter-elegant.png" type="image/x-icon">
+</head>
+<body class="light">
+  <header class="padding-ish undropped" id="header">
+    <a href="" class="logo">
+      <img src="/core/shared/images/bitconverter-elegant.png" alt="Logo Bitverter">
+      <span>Bitverter</span>
+    </a>
+    <nav>
+      <a href="#home" data-fr="Accueil" data-en="Home" class="inner_link"></a>
+      <a href="#features" data-fr="Fonctionnalites" data-en="Features" class="inner_link"></a>
+      <a href="#about_us" data-fr="A propos" data-en="About us" class="inner_link"></a>
+    </nav>
+    <div class="action">
+      <button type="button" data-fr="Commencer" data-en="Get started" data-location="/bitconverter/index.html" onclick="redirect(this)"></button>
+      <button type="button">
+        <span data-fr="Telecharger" data-en="Download"></span>
+        <span class="highlight">Bitverter</span>
+      </button>
+    </div>
+    <button type="button" id="header_dropper" class="header_dropper undropped" onclick="toggle_element(this, 'undropped', 'dropped')">
+      <div class="line_a"></div>
+      <div class="line_b"></div>
+    </button>
+  </header>
+  <main>
+    <div class="home padding-ish" id="home">
+      <img src="/core/shared/images/net-chart-3d.jpg" alt="">
+      <div class="pres">
+        <h1>
+          <span class="highlight">Bitverter</span>
+          <span data-fr=" — Convertis, calcules, et comprends le monde digital." data-en=" — Convert, calculate, and understand the digital world."></span>
+        </h1>
+        <p>
+          <span class="highlight">Bitverter</span> 
+          <span data-fr="est une plateforme moderne et intuitive creee pour operer des conversions digitales sans grand effort. Ceci commencera par un simple convertisseur d'unite de stockage — bytes, kilobytes, megabytes, et au-dela — puis evoluera en un pack digital complet." data-en="is a modern and intuitive web platform designed to make digital conversions effortless.
+          It started as a simple unit converter for computing measurements — bytes, kilobytes, megabytes, and beyond — and is evolving into a complete digital toolkit."></span>
+          <br><br>
+          <span data-fr="Dans les prochaines mises a jours, " data-en="With future updates, "></span>
+          <span class="highlight">Bitverter</span>
+          <span data-fr="incluera une" data-en=" will include a "></span>
+          <span class="highlight" data-fr="calculatrice integree" data-en="built-in calculator"></span>
+          <span data-fr=", un " data-en=", a "></span>
+          <span class="highlight" data-fr="convertisseur de crypto et monnaie" data-en="currency and crypto converter"></span>
+          <span data-fr=", et d'autres outils essentiels, tout en un propre, et interface adapte." data-en=", and other essential everyday tools, all in one clean, responsive interface."></span>
+          <br><br>
+          <span data-fr="Notre but est d'aider les developpeurs, etudiants, et techniciens enthousiastes." data-en="Our goal is to help developers, students, and tech enthusiasts "></span>
+          <span class="highlight" data-fr="a economiser le temps, " data-en="save time, "></span>
+          <span class="highlight" data-fr=" a travailler intelligemment" data-en="work smarter"></span>
+          <span data-fr=", et " data-en=", and "></span>
+          <span class="highlight" data-fr="comprendre les donnees facilement" data-en="understand data effortlessly"></span>
+          <span data-fr=" — sans basculer entre plusieurs applications." data-en=" — without switching between multiple apps."></span>
+        </p>
+        <button type="button" data-location="target/index.html" onclick="redirect(this)" id="main_get_started" data-fr="Commencer maintenant" data-en="Get Started"></button>
+      </div>
+    </div>
+    <div class="features padding-ish" id="features">
+      <h1>
+        <span class="highlight" data-fr="Fonctionnalites" data-en="Features"></span>
+        <span data-fr=" — Ce Qui Rend" data-en=" — What Makes"></span>
+        <span class="highlight"> Bitverter </span>
+        <span data-fr="Unique" data-en=" Unique"></span> 
+      </h1>
+      <div class="boxes" id="boxes">        
+      </div>
+    </div>
+    <div class="about_us padding-ish" id="about_us">
+      <h1>
+        <span data-fr="Tout" data-en="All"></span>
+        <span class="highlight" data-fr="a propos de ce site" data-en="about this website"></span></h1>
+      <div class="links">
+        <ul class="sections">
+          <h2 data-fr="Sections" data-en="Sections"></h2>
+          <a href="#home">
+            <li data-fr="Accueil" data-en="Home"></li>
+          </a><a href="#features">
+            <li data-fr="Fonctionnalites" data-en="Features"></li>
+          </a><a href="#about_us">
+            <li data-fr="A propos" data-en="About us"></li>
+          </a>
+        </ul>
+        <ul class="overview">
+          <h2 data-fr="Vue d'ensemble" data-en="Overview"></h2>
+          <a href="/bitconverter/index.html">
+            <li>
+              <span data-fr="Commencer une" data-en="Start a"></span>
+              <span class="highlight" data-fr="conversion" data-en="conversion"></span>
+            </li>
+          </a><a href="">
+            <li>
+              <span data-fr="Telecharger" data-en="Download"></span>
+              <span class="highlight">Bitverter</span></li>
+          </a>
+        </ul>
+        <ul class="features_list">
+          <h2 data-fr="Fonctionnalites" data-en="Features"></h2>
+          <a href="">
+            <li data-fr="Calculatrice incluse" data-en="Built-in calculator"></li>
+          </a><a href="">
+            <li data-fr="Convertisseur crypto et de monnaie" data-en="Currency & crypto converter"></li>
+          </a><a href="">
+            <li data-fr="Convertisseur d'unite de stockage" data-en="Smart unit conversion"></li>
+          </a><a href="">
+            <li data-fr="Generateur de code QR" data-en="QR code generator"></li>
+          </a>
+        </ul>
+        <ul class="social">
+          <h2 data-fr="Reseaux sociaux" data-en="Social"></h2>
+          <a href="">
+            <li>Git</li>
+          </a><a href="https://github.com/adebash/Bitverter" target="_blank">
+            <li>GitHub</li>
+          </a>
+        </ul>
+      </div>
+      <div class="footer">
+        <p>&copy;2025 <span class="highlight">Bitverter</span></p>
+        <div class="settings">
+          <button type="button" class="theme" id="theme_set" onclick="change_theme()">
+            <span>Theme:</span>
+            &nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+            </svg>
+          </button>
+          <button type="button" class="language" onclick="switch_lang()">
+            <span data-fr="Langue: " data-en="Language: "></span>
+            &nbsp;
+            <span id="current_lang" data-fr="Francais" data-en="English">Francais</span>
+          </button>
+          <a href="#home">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+            </svg>            
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="/main/js/app.js"></script>
+<script src="/main/js/features.js"></script>
+<script type="module" src="/core/shared/js/theme.js"></script>
+<script type="module" src="/core/shared/js/lang.js"></script>
+<script type="module" src="/core/shared/js/toggle.js"></script>
+<script src="/main/js/redirect.js"></script>
+</html>

@@ -1,0 +1,78 @@
+@media screen and (max-width: 1024px) {
+  body main .container {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 806px) {
+  * {
+    font-size: 11px;
+  }
+  body main .container .content .conv_box {
+    width: 100%;
+    background: transparent;
+    display: flex !important;
+    flex-direction: column;
+    gap: 5%;
+    border-radius: 1em;
+    align-items: center;
+    justify-content: space-between;
+  }
+  body main .container .content .conv_box > div {
+    height: 8em !important;
+    width: 100%;
+    margin: 1em;
+  } 
+}
+@media screen and (max-width: 580px) {
+  .padding-ish {
+    padding: 0 1em;
+  }
+  body main {
+    padding-top: 6em !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important;
+    gap: 1em;
+  }
+  body main .container .content form .copy_form_from span{
+    display: none !important;
+  }
+  body main .container .content form .form_from {
+    display: none;
+  }
+  body main .container .content form input {
+    text-align: left !important;
+    text-indent: 1em;
+  }
+  body main .container .params button span {
+    display: none;
+  }
+  body main .container .params button:nth-child(2) span {
+    display: block;
+  }
+  body header .quick_options .tools {
+    position: static;
+  }
+  body header .quick_options .tools .tools_list {
+    width: 100vw !important;
+    top: 7em;
+    right: 0;
+  }
+  body header .quick_options > button:nth-child(2) span {
+    display: none !important;
+  }
+  body main .container .content .settings fieldset .color_scheme {
+    justify-content: space-between !important;
+  }
+  body main .container .content .settings fieldset .color_scheme .color_options {
+    min-width: 15em !important;
+    gap: 0;
+  }
+  body main .container .content .settings fieldset .color_scheme .color_options button {
+    width: 3em !important;
+    height: 5em;
+  }
+  body main .container .content .settings fieldset .color_scheme .color_options button span:nth-child(2) {
+    display: none;
+  }
+}

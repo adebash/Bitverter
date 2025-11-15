@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/core/shared/css/root.css">
+  <link rel="stylesheet" href="/bitconverter/assets/css/style.css">
+  <link rel="stylesheet" href="/bitconverter/assets/css/history.css">
+  <link rel="stylesheet" href="/bitconverter/assets/css/media_query.css">
+  <link rel="stylesheet" href="/bitconverter/assets/css/main.css">
+  <link rel="stylesheet" href="/bitconverter/assets/css/settings.css">
+  <link rel="shortcut icon" href="/core/shared/images/bitconverter-elegant.png" type="image/x-icon">
+  <title>Bit Converter</title>
+</head>
+<body class="light" data-colorscheme="elegant">
+  <div class="history_container history_container_closed" id="history_container">
+    <div class="history_head">
+      <div class="entry">
+        <h1 data-fr="Historique" data-en="History"></h1>
+        <button type="button" data-fr="Nettoyer" data-en="Clear" onclick="clear_history()"></button>
+      </div>
+      <button type="button" class="history_closer" onclick="toggle_history()">
+        <span data-fr="Fermer l'historique" data-en="Close history"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>        
+      </button>
+    </div>
+    <div class="history_content" id="history_content">
+      
+    </div>
+  </div>
+  <header class="padding-ish">
+    <a href="/" class="logo">
+      <img src="/core/shared/images/bitconverter-elegant.png" alt="Logo Bitverter">
+      <span>Bitverter</span>
+    </a>
+    <div class="quick_options">
+      <div class="tools">
+        <button type="button" onclick="toggle_tools_list()">
+          <span data-en="Other tools" data-fr="Autres outils"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+          </svg>          
+        </button>
+        <div class="tools_list tools_list_closed" id="tools_list">
+          <button disabled="disabled">
+            <span data-fr="Convertisseur crypto & monnaie" data-en="Currency & Crypto Conversion"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <button disabled="disabled">
+            <span data-fr="Calculatrice de fonction" data-en="Mathematic operation calculator"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <button disabled="disabled">
+            <span data-fr="Generateur de code QR" data-en="QR Code generator"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+            </svg>            
+          </button>
+        </div>
+      </div>
+      <button type="button" class="history" id="history" onclick="toggle_history()">
+        <span data-fr="Historique" data-en="History"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="roun  d" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>          
+      </button>
+    </div>
+  </header>
+  <main class="padding-ish">
+    <div class="hero">
+      <h1 class="highlight">Bit Converter</h1>
+      <h3><span class="highlight" data-fr="Convertis" data-en="Convert"></span>, <span class="highlight" data-fr="Compares" data-en="Compare"></span>, <span class="highlight" data-fr="Comprends" data-en="Comprehend"></span>.</h3>
+    </div>
+    <div class="container">
+      <div class="params">
+        <button type="button" class="param active" id="converter" onclick="toggle_settings(this, settings, 'opened', 'closed')">
+          <span data-fr="Conversion" data-en="Conversion"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
+          </svg>          
+        </button>
+        <button type="button" disabled class="user_btn" id="user_btn">
+          <span class="user_tag" id="user_tag">Username</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+          </svg>          
+        </button>
+        <button type="button" class="param" id="parameter" onclick="toggle_settings(this, settings, 'closed', 'opened')">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+          </svg>          
+          <span data-fr="Reglages" data-en="Settings"></span>
+        </button>
+      </div>
+      <div class="content">
+        <div class="settings closed" id="settings">
+          <h1 data-fr="Reglages" data-en="Settings"></h1>
+          <fieldset class="username">
+            <legend>Session</legend>
+            <div class="user_box">
+              <input type="text" name="set_username" id="set_username" required>
+              <label for="set_username" data-fr="Mettre a jour le nom d'utilisateur" data-en="Update current username"></label>
+            </div>
+          </fieldset>
+          <fieldset class="display">
+            <legend data-fr="Parametres d'affichage" data-en="Display settings"></legend>
+            <div class="theme_setting">
+              <span class="app_theme" data-fr="Theme d'application: " data-en="Application theme: "></span>
+              <div class="themes">
+                <button type="button" class="light active theme_turner" id="light" onclick="turn_theme(this, 'dark', 'light')" data-fr="Clair" data-en="Light"></button>
+                <button type="button" class="dark theme_turner" id="dark" onclick="turn_theme(this, 'light', 'dark')" data-fr="Sombre" data-en="Dark"></button>
+              </div>
+            </div>
+            <div class="color_scheme">
+              <span class="color_scheme_span" data-fr="Schema de couleur: " data-en="Color scheme: "></span>
+              <div class="color_options">
+                <button type="button" class="active" data-scheme="--elegant-theme" data-schemeAlt="--elegant-theme-alt" data-schemeId="elegant">
+                  <span class="scheme_indic"></span>
+                  <span>Elegant</span>
+                </button>
+                <button type="button" class="" data-scheme="--savage-theme" data-schemeAlt="--savage-theme-alt" data-schemeId="savage">
+                  <span class="scheme_indic"></span>
+                  <span data-fr="Sauvage" data-en="Savage"></span>
+                </button>
+                <button type="button" class="" data-scheme="--faune-theme" data-schemeAlt="--faune-theme-alt" data-schemeId="faune">
+                  <span class="scheme_indic"></span>
+                  <span>Faune</span>
+                </button>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="features">
+            <legend data-fr="Fonctionnalites" data-en="Features"></legend>
+            <div class="history_saving">
+              <span style="width: 90%; min-height: 3em;">
+                <span data-fr="Etat d'historique de sauvegarde" data-en="History saving state: "></span>
+                <br><br>
+                <div style="background: var(--warning-color-alt); width: 90%; min-height: 3em; padding: 1em; border-radius: 1em;">
+                  <strong style="color: var(--warning-color);">NB:</strong>
+                  <span data-fr="Activez cette option pour sauvegarder vos conversions. Cliquez sur le bouton de copie de la valeur convertie pour sauvegarder la conversion." data-en="Enable this option to activate your conversions saving. Click on copy button of converted value to save conversion."></span>
+                </div>
+              </span>
+              <button type="button" class="history_toggler inactive" id="history_toggler" onclick="toggle_event(this, 'saved_history_state')">
+                <span class="history_indic" id="history_indic"></span>
+              </button>
+            </div>
+            <div class="switcher_display">
+              <span data-fr="Permutateur" data-en="Switcher: " style="width: 90%; min-height: 3em;"></span>
+              <button class="switcher_display_b inactive" id="switcher_display_b" onclick="toggle_event(this, 'saved_switcher_state')">
+                <span class="switcher_display_indic" id="switcher_display_indic"></span>
+              </button>
+            </div>
+            <div class="language_box">
+              <span data-fr="Langue de l'application" data-en="Application language: "></span>
+                <button type="button" class="lang_btn" onclick="switch_lang()" data-fr="Francais" data-en="English"></button>
+            </div>
+          </fieldset>
+        </div>
+        <form action="">
+          <button type="button" class="form_from" id="form_from" disabled>Bytes (B)</button>
+          <input type="text" name="form_from_source" id="form_from_source" required>
+          <label for="form_from_source" data-fr="Entrer la valeur a convertir" data-en="Input the value to convert"></label>
+          <button type="button" class="copy_form_from" onclick="copy_element(document.getElementById('form_from_source'))">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
+            </svg>
+            <span data-fr="Copier" data-en="Copy"></span> 
+          </button>
+        </form>
+        <div class="conv_box">
+          <div class="from">
+            <div class="info">
+              <span class="mention" data-fr="De :" data-en="From :"></span>
+              <div class="bytes_box">
+                <button type="button" class="from_button"  onclick="toggle_bytes_options(this,sources_bytes_options)">
+                  <span class="from_bytes"id="from_bytes">Bytes (B)</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                  </svg>
+                </button>
+                <div class="bytes_options bytes_options_closed" id="sources_bytes_options">
+                  <button type="button" class="source_item" id="sb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="Bytes (B)" data-sourceSize="">Bytes (B)</button>
+                  <button type="button" class="source_item" id="skb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="KiloBytes (KB)" data-sourceSize="">KiloBytes (KB)</button>
+                  <button type="button" class="source_item" id="smb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="MegaBytes (MB)" data-sourceSize="">MegaBytes (MB)</button>
+                  <button type="button" class="source_item" id="sgb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="GigaBytes (GB)" data-sourceSize="">GigaBytes (GB)</button>
+                  <button type="button" class="source_item" id="stb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="TeraBytes (TB)" data-sourceSize="">TeraBytes (TB)</button>
+                  <button type="button" class="source_item" id="spb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="PetaBytes (PB)" data-sourceSize="">PetaBytes (PB)</button>
+                  <button type="button" class="source_item" id="shb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="HexaBytes (HB)" data-sourceSize="">HexaBytes (HB)</button>
+                  <button type="button" class="source_item" id="szb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="ZetaBytes (ZB)" data-sourceSize="">ZetaBytes (ZB)</button>
+                  <button type="button" class="source_item" id="syb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="YottaBytes (YB)" data-sourceSize="">YottaBytes (YB)</button>
+                  <button type="button" class="source_item" id="srb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="RonnaBytes (RB)" data-sourceSize="">RonnaBytes (RB)</button>
+                  <button type="button" class="source_item" id="sqb" onclick="toggle_bytes_options(this,sources_bytes_options)" data-sourceTag="QuettaBytes (QB)" data-sourceSize="">QuettaBytes (QB)</button>
+                </div>
+              </div>
+            </div>
+            <div class="source">
+              <input type="text" name="source_bytes" id="source_bytes" class="source_bytes" disabled>
+              <button type="button" class="source_copy" onclick="copy_element(document.getElementById('source_bytes'))">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="switch" id="bytes_items_switcher">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
+          </button>
+          <div class="to">
+            <div class="info">
+              <span class="mention" data-fr="Vers :" data-en="To :"></span>
+              <div class="bytes_box">
+                <button type="button" class="current_bytes" onclick="toggle_bytes_options(this,target_bytes_options)">
+                  <span class="to_bytes" id="to_bytes">Bytes (B)</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                  </svg>
+                </button>
+                <div class="bytes_options bytes_options_closed" id="target_bytes_options">
+                  <button type="button" class="target_item" id="tb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="Bytes (B)" data-targetSize="">Bytes (B)</button>
+                  <button type="button" class="target_item" id="tkb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="KiloBytes (KB)" data-targetSize="">KiloBytes (KB)</button>
+                  <button type="button" class="target_item" id="tmb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="MegaBytes (MB)" data-targetSize="">MegaBytes (MB)</button>
+                  <button type="button" class="target_item" id="tgb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="GigaBytes (GB)" data-targetSize="">GigaBytes (GB)</button>
+                  <button type="button" class="target_item" id="ttb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="TeraBytes (TB)" data-targetSize="">TeraBytes (TB)</button>
+                  <button type="button" class="target_item" id="tpb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="PetaBytes (PB)" data-targetSize="">PetaBytes (PB)</button>
+                  <button type="button" class="target_item" id="thb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="HexaBytes (HB)" data-targetSize="">HexaBytes (HB)</button>
+                  <button type="button" class="target_item" id="tzb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="ZetaBytes (ZB)" data-targetSize="">ZetaBytes (ZB)</button>
+                  <button type="button" class="target_item" id="tyb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="YottaBytes (YB)" data-targetSize="">YottaBytes (YB)</button>
+                  <button type="button" class="target_item" id="trb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="RonnaBytes (RB)" data-targetSize="">RonnaBytes (RB)</button>
+                  <button type="button" class="target_item" id="tqb" onclick="toggle_bytes_options(this,target_bytes_options)" data-targetTag="QuettaBytes (QB)" data-targetSize="">QuettaBytes (QB)</button>
+                </div>
+              </div>
+            </div>
+            <div class="target">
+              <input type="text" name="target_bytes" id="target_bytes" class="target_bytes" disabled>
+              <button type="button" class="target_copy" id="target_copy" onclick="copy_element(document.getElementById('target_bytes'))">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="main_history" onclick="toggle_history()">
+          <span data-fr="Historique" data-en="History"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg> 
+        </button>
+      </div>
+    </div>
+  </main>
+</body>
+<script type="module" src="/bitconverter/assets/js/innerMain.js"></script>
+<script type="module" src="/core/shared/js/lang.js"></script>
+<script type="module" src="/bitconverter/assets/js/theme.js"></script>
+<script src="/bitconverter/assets/js/history.js"></script>
+<script src="/bitconverter/assets/js/tools_list.js"></script>
+<script type="module" src="/bitconverter/assets/js/bytes.js"></script>
+<script type="module" src="/bitconverter/assets/js/app.js"></script>
+<script src="/bitconverter/assets/js/innerBytes.js"></script>
+</html>

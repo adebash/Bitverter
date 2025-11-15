@@ -1,0 +1,65 @@
+body {
+  background: linear-gradient(to top, var(--primary-color), var(--background-color));
+  position: relative;
+  height: 100vh !important;
+}
+body header .quick_options {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1em;
+  height: 100%;
+}
+body header .quick_options button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: .5em;
+  gap: .5em;
+  height: 3.5em !important;
+}
+body header .quick_options .tools {
+  position: relative;
+}
+body header .quick_options .tools > button {
+  background: transparent;
+  border: 1px solid var(--border-color);
+}
+body header .quick_options .tools > button:hover,
+body header .quick_options .history:hover {
+  background: var(--primary-alt-color);
+  border: 1px solid var(--primary-color);
+}
+body header .quick_options .tools .tools_list {
+  position: absolute;
+  display: grid;
+  min-width: 25em;
+  gap: .5em;
+  padding: 1em;
+  border-radius: 1em;
+  backdrop-filter: blur(1em);
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+}
+.tools_list_closed {
+  z-index: -1;
+  transform: scale(0);
+  opacity: 0;
+  right: -5em;
+  top: 0;
+}
+.tools_list_opened {
+  z-index: 3; 
+  opacity: 1;
+  right: -1em;
+  top: calc(100% + 1.25em);
+}
+body header .quick_options .tools .tools_list button {
+  justify-content: start;
+  border: 1px solid var(--primary-alt-color);
+}
+body header .quick_options .tools .tools_list button:hover {
+  gap: 1em;
+  background: var(--primary-alt-color);
+  border: 1px solid transparent;
+}

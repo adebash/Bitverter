@@ -1,0 +1,222 @@
+body header nav {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-weight: bold;
+}
+body header nav a:hover {
+  color: var(--primary-color);
+}
+body header .action {
+  width: auto;
+  display: grid;
+  grid-template-columns: 40% 55%;
+  gap: 5%;
+  min-width: 23em;
+  min-height: 3.5em;
+}
+body header .action button {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  padding: 0 .5em;
+}
+body header .action button:first-child {
+  background: var(--primary-color);
+}
+body header .action button:hover,
+body main .home .pres button:hover {
+  background: var(--primary-alt-color);
+}
+
+body main .home {
+  display: grid;
+  grid-template-columns: 40% 55%;
+  align-items: center;
+  gap: 5%;
+  background: #a3d4ff;
+  padding-top: 6em;
+  position: relative;
+}
+body main .home .pres {
+  min-height: calc(100vh - 6em);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 2em;
+}
+body main .home .pres button {
+  height: 4em;
+  padding: .5em 2em;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+body main .home img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 3em 0 3em var(--background-color);
+  animation: shadow-ish 10s infinite linear;
+}
+body main .home img:hover {
+  --background-color: #a3d4ff;
+  transform: translateY(-1em);
+}
+
+@keyframes shadow-ish {
+ 0% {
+  box-shadow: 3em 0 20em var(--background-color);  
+ } 12.5% {
+  box-shadow: 3em 3em 20em var(--background-color);
+ } 25% {
+  box-shadow: 0 3em 20em var(--background-color);
+ } 37.5% {
+  box-shadow: -3em 3em 20em var(--background-color);
+ } 50% {
+  box-shadow: -3em 0 20em var(--background-color);
+ } 62.5% {
+  box-shadow: -3em -3em 20em var(--background-color);
+ } 75% {
+  box-shadow: 0 -3em 20em var(--background-color);
+ } 87.5% {
+  box-shadow: 3em -3em 20em var(--background-color);
+ } 100% {
+  box-shadow: 3em 0 20em var(--background-color);
+ }
+}
+
+body main .features {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #a3d4ff, var(--primary-alt-color));
+  gap: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6em;
+}
+body main .features .boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-around;
+}
+body main .features .boxes > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1em;
+  border-radius: 1em;
+  gap: 1em;
+  cursor: pointer;
+}
+body main .features .boxes > div img {
+  width: 20em;
+}
+body main .features .boxes > div .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+body main .features .boxes > div .info .statut {
+  background: transparent;
+  padding: .5em;
+  border-radius: 1em;
+}
+body main .features .boxes > div .info .unavailable {
+  color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+}
+body main .features .boxes > div .info .available {
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+body main .features .boxes > div button {
+  height: 4em;
+  width: 90%;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-alt-color);
+}
+body main .features .boxes > div button:hover {
+  background: var(--primary-color);
+}
+body main .features .boxes > div button:disabled,
+body main .features .boxes > div button:disabled:hover {
+  opacity: .4;
+  background: var(--primary-alt-color);
+}
+body main .features .boxes > div:hover {
+  transform: translateY(-1em);
+  background: var(--primary-alt-color);
+}
+body main .features .boxes > div:hover img {
+  transform: scale(1.1);
+}
+body main .about_us {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to top, #a3d4ff, var(--primary-alt-color));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+}
+body main .about_us .links {
+  min-height: 80%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  align-items: start;
+  justify-items: center;
+  background: var(--primary-alt-color);
+  padding: 6em 0;
+  border-radius: 1em;
+}
+body main .about_us .links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  padding: 0 2em;
+}
+body main .about_us .links ul:first-child,
+body main .about_us .links ul:nth-child(2) {
+  align-items: start;
+}
+body main .about_us .links ul:last-child,
+body main .about_us .links ul:nth-child(3) {
+  align-items: end;
+  text-align: right;
+}
+body main .about_us .links ul li {
+  opacity: .7;
+  font-weight: 600;
+}
+body main .about_us .links ul li:hover {
+  opacity: 1;
+}
+body main .about_us .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+body main .about_us .footer .settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+body main .about_us .footer .settings button {
+  display: flex;
+  align-items: center;
+  height: 3.5em;
+  padding: .5em 1em;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-alt-color);
+}
+body main .about_us .footer .settings button:hover {
+  background: var(--primary-color);
+}
